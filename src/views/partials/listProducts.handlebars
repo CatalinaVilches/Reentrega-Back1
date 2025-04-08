@@ -1,0 +1,82 @@
+<article class="containerProductos">
+    <div class="contenedorProductos">
+        {{#each products.payload}}
+        <div class="product">
+            <div class="imgContain">
+                <img class="productImg" src={{thumbnails.[0]}} alt={{title}} />
+            </div>
+            <div class="descripcion">
+                <h3 class="productTitle">{{title}}</h3>
+                <div class="descripciones">
+                    <div class="description des">
+                        <small>
+                            Descripcion:
+                        </small>
+                        <p class="descriptionP">
+                            {{description}}
+                        </p>
+                    </div>
+                    <div class="description categoria">
+                        <small>Categoria:</small>
+                        <p class="categoryP">{{category}}</p>
+                    </div>
+                    <div class="description code">
+                        <small>Code:</small>
+                        <p class="codeP">{{code}}</p>
+                    </div>
+                    <div class="description id">
+                        <small>Id:</small>
+                        <p class="idP">{{id}}</p>
+                    </div>
+                    <div class="description price">
+                        <small>Price:</small>
+                        <p class="priceP">{{price}}</p>
+                    </div>
+                    <div class="description status">
+                        <small>Status:</small>
+                        <p class="statusP">{{status}}</p>
+                    </div>
+                    <div class="description stock">
+                        <small>Stock:</small>
+                        <p>{{stock}}</p>
+                    </div>
+                    <div class="description quantity">
+                        <small>Quantity:</small>
+                        <input type="number" name="quantity" class="quantityP" value="1" required />
+                    </div>
+                    <div class="addCarts">
+                        <label for="cartId">elige un carrito</label>
+                        {{#if ../carts.length}}
+                        <select name="carts" id="cartId">
+                            {{#each ../carts}}
+                            <option value="{{_id}}">{{_id}}</option>
+                            {{/each}}
+                        </select>
+                        {{else}}
+                        <p>No hay carritos?, porque no te lo creas?<span><button onclick="createCart()">crea un carrito</button></span></p>
+                        {{/if}}
+                        <button onclick="addToCart('{{id}}', this)" class="addCart">add to cart</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {{/each}}
+
+
+    </div>
+
+    <div class="paginacion">
+    {{#if products.hasPrevPage}}
+    <a href="/products?limit={{../limit}}&page={{products.prevPage}}&sort={{../sort}}&query={{../query}}">Pág.Prev.</a>
+    {{/if}}
+
+    <p>Página actual: {{products.page}}</p>
+
+    {{#if products.hasNextPage}}
+    <a href="/products?limit={{../limit}}&page={{products.nextPage}}&sort={{../sort}}&query={{../query}}">Pág.Sig.</a>
+    {{/if}}
+</div>
+<p>Total de páginas: {{products.totalPages}}</p>
+
+</article>
+<script src="/js/index.js"></script>

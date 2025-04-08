@@ -1,0 +1,1 @@
+"mongodb+srv://catalinavilchesf99:pZM6ycPsdi7q3BTZ@ecommerce.vac1o.mongodb.net/?retryWrites=true&w=majority&appName=Ecommerce"

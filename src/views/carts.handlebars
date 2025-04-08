@@ -1,0 +1,25 @@
+{{>nav}}
+{{#if carts.length}}
+<div>
+    <h1>Carritos</h1>
+
+    <ul>
+        {{#each carts}}
+            <li>
+                <div class="cartDetail">
+                    <p>carrito con id: {{_id}} </p>
+                    <a href="/carts/{{_id}}">ir al detalle</a>
+                    <button onclick="deleteCart('{{_id}}')">eliminar productos</button>
+                </div>
+            </li>
+        {{/each}}
+
+        <button onclick="createCart()">crear carrito</button>
+    </ul>
+</div> 
+{{else}}
+    <h1>No hay carritos</h1>
+    <p>crea un carrito aqui: <button onclick="createCart()">Click aqui</button></p>
+{{/if}}
+
+<script src="/js/index.js"></script>

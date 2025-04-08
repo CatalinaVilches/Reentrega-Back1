@@ -1,0 +1,44 @@
+<section>
+    <div class="titulo">
+        <h3>Añade un producto</h3>
+    </div>
+    <form id="formProducts">
+        <div class="datos">
+            <label for="title">titulo</label>
+            <input type="text" name="title" id="titulo">
+        </div>
+        <div class="datos">
+            <label for="description">Descripcion</label>
+            <input type="text" name="description" id="descripcion">
+        </div>
+        <div class="datos">
+            <label for="code">Code</label>
+            <input type="text" name="code" id="code">
+        </div>
+        <div class="datos">
+            <label for="price">Precio</label>
+            <input type="number" name="price" id="precio">
+        </div>
+        <div class="datos">
+            <label for="status">Status</label>
+            <select name="status" id="status">
+                <option value="true">Activo</option>
+                <option value="false">Inactivo</option>
+            </select>
+        </div>
+        <div class="datos">
+            <label for="stock">Stock</label>
+            <input type="number" name="stock" id="stock">
+        </div>
+        <div class="datos">
+            <label for="category">Categoria</label>
+            <input type="text" name="category" id="categoria">
+        </div>
+        <div class="datos">
+            <label for="thumbnails">Thumbnails</label>
+            <input type="text" name="thumbnails"  id="imagenes" placeholder="separa el link con una ,">
+        </div>
+
+        <button type="submit" id="boton">Agregar</button>
+    </form>
+</section>
