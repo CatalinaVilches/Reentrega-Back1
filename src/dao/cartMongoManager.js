@@ -1,4 +1,4 @@
-mport { CartModel } from "./models/cartsModel.js";
+import { CartModel } from "./models/cartsModel.js";
 import { productosModel } from "./models/productsModel.js";
 import cartsValidation from "../validaciones/cartsValidation.js";
 
